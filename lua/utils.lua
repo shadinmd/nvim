@@ -19,7 +19,7 @@ M.on_attach = function(_, bufnr)
 end
 
 M.servers = {
-	tsserver = {},
+	ts_ls = {},
 	lua_ls = {
 		Lua = {
 			diagnostics = {
