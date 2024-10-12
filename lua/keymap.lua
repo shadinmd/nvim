@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>q", ":qa<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>l", ":noh<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>w", ":wa<CR>", { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { noremap = true, silent = true })
+-- vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { noremap = true, silent = true })
 
 vim.keymap.set('n', '<A-j>', '<C-w>j', { noremap = true, silent = true })
 vim.keymap.set('n', '<A-k>', '<C-w>k', { noremap = true, silent = true })
