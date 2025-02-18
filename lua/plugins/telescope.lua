@@ -14,10 +14,6 @@ return {
 			},
 			defaults = {
 				file_ignore_patterns = { "node_modules", "git", "debug", "Debug" },
-				vimgrep_arguments = {
-					"--no-ignore",
-					"--hidden"
-				}
 			},
 			extensions = {
 				fzf = {
