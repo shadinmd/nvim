@@ -26,6 +26,10 @@ return {
 			jsx = {
 				require("formatter.filetypes.javascript").prettier
 			},
+			go = {
+				require("formatter.filetypes.go").gofmt
+			},
+
 		}
 
 		require('formatter').setup({
