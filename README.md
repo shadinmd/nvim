@@ -50,14 +50,14 @@ first install all required dependecies for the best experience
 ##### linux
 
 ```bash
-    git clone https://github.com/shadinmhd/nvim ~/.config/nvim
+    git clone https://github.com/shadinmd/nvim ~/.config/nvim
 ```
 
 ##### windows
 
 ```bash
     cd $env:LOCALAPPDATA
-    git clone https://github.com/shadinmhd/nvim
+    git clone https://github.com/shadinmd/nvim
 ```
 
 #### 3. start neovim
