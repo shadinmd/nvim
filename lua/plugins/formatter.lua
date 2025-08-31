@@ -29,7 +29,16 @@ return {
 			go = {
 				require("formatter.filetypes.go").gofmt
 			},
-
+			dart = {
+				function()
+					return {
+						exe = "dart",
+						args = { "format", "--line-length=80", vim.api.nvim_buf_get_name(0) },
+						stdin = false, -- must be false for dart format
+					}
+				end
+			}
+			,
 		}
 
 		require('formatter').setup({
