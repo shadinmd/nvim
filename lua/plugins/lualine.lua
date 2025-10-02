@@ -1,6 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons", "linrongbin16/lsp-progress.nvim" },
+	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		require("lualine").setup({
 			sections = {
@@ -13,9 +13,6 @@ return {
 						"filename",
 						path = 1,
 					},
-				},
-				lualine_c = {
-					require("lsp-progress").progress,
 				},
 				lualine_x = {
 					"filetype",
