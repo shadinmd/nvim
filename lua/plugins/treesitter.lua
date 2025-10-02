@@ -1,6 +1,7 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
+	main = "nvim-treesitter.configs",
 	dependencies = { "windwp/nvim-ts-autotag" },
 	config = function()
 		local configs = require("nvim-treesitter.configs")
