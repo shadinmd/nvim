@@ -31,7 +31,14 @@ return {
 			preset = "default",
 			["<CR>"] = { "select_and_accept", "fallback" },
 			["<C-i>"] = { "show" },
-			["<Esc>"] = { "cancel", "fallback" },
+			["<Esc>"] = {
+				function(cmp)
+					if cmp.is_visible() then
+						cmp.hide()
+					end
+					vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
+				end,
+			},
 		},
 
 		appearance = {
@@ -39,9 +46,10 @@ return {
 		},
 
 		completion = {
+			preselect = "first",
 			-- By default, you may press `<c-space>` to show the documentation.
 			-- Optionally, set `auto_show = true` to show the documentation after a delay.
-			documentation = { auto_show = false, auto_show_delay_ms = 500 },
+			documentation = { auto_show = true, auto_show_delay_ms = 500 },
 		},
 
 		sources = {
