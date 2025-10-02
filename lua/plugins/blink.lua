@@ -30,6 +30,8 @@ return {
 		keymap = {
 			preset = "default",
 			["<CR>"] = { "select_and_accept" },
+			["<C-i>"] = { "show" },
+			["<Esc>"] = { "cancel", "fallback" },
 		},
 
 		appearance = {
