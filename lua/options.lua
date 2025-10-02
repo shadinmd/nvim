@@ -23,7 +23,7 @@ local plugins = {
 	ignorecase = true,
 	smartcase = true,
 	incsearch = true,
-	hlsearch = true
+	hlsearch = true,
 }
 
 for option, value in pairs(plugins) do

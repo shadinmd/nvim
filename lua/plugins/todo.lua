@@ -42,7 +42,7 @@ return {
 				info = { "DiagnosticInfo", "#2563EB" },
 				hint = { "DiagnosticHint", "#10B981" },
 				default = { "Identifier", "#7C3AED" },
-				test = { "Identifier", "#FF00FF" }
+				test = { "Identifier", "#FF00FF" },
 			},
 			search = {
 				command = "rg",
@@ -56,6 +56,6 @@ return {
 				pattern = [[\b(KEYWORDS):]],
 			},
 		})
-		vim.keymap.set('n', '<leader>st', ":TodoTelescope<CR>", {})
-	end
+		vim.keymap.set("n", "<leader>st", ":TodoTelescope<CR>", {})
+	end,
 }
