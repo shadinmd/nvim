@@ -29,7 +29,7 @@ return {
 	opts = {
 		keymap = {
 			preset = "default",
-			["<CR>"] = { "select_and_accept" },
+			["<CR>"] = { "select_and_accept", "fallback" },
 			["<C-i>"] = { "show" },
 			["<Esc>"] = { "cancel", "fallback" },
 		},
