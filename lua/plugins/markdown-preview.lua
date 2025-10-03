@@ -1,9 +1,14 @@
 return {
-	"iamcco/markdown-preview.nvim",
-	cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-	build = "cd app && npm install",
-	init = function()
-		vim.g.mkdp_filetypes = { "markdown" }
-	end,
+	"MeanderingProgrammer/render-markdown.nvim",
+	dependencies = { "nvim-treesitter/nvim-treesitter" },
 	ft = { "markdown" },
+	opts = {
+		anti_conceal = {
+			enabled = false,
+		},
+	},
+	config = function(_, opts)
+		require("render-markdown").setup(opts)
+		vim.keymap.set("n", "<leader>m", ":RenderMarkdown toggle<CR>", { desc = "Toggle Render Markdown" })
+	end,
 }
