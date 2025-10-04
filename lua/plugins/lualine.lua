@@ -14,6 +14,7 @@ return {
 						path = 1,
 					},
 				},
+				lualine_c = {},
 				lualine_x = {
 					"filetype",
 				},
