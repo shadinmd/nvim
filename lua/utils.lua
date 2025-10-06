@@ -15,7 +15,6 @@ M.servers = {
 	yamlls = {},
 	jsonls = {},
 	cssls = {},
-	marksman = {},
 	html = {},
 	emmet_language_server = {},
 }
