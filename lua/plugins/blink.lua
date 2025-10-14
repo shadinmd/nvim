@@ -30,7 +30,7 @@ return {
 		keymap = {
 			preset = "default",
 			["<CR>"] = { "select_and_accept", "fallback" },
-			["<C-i>"] = { "show" },
+			["<M-i>"] = { "show" },
 			["<Esc>"] = {
 				function(cmp)
 					if cmp.is_visible() then
