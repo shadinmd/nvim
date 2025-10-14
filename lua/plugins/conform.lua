@@ -23,6 +23,7 @@ return {
 			javascriptreact = { "prettier" },
 			typescriptreact = { "prettier" },
 			json = { "prettier" },
+			svg = { "prettier" },
 		},
 	},
 }
