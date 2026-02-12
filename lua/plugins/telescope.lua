@@ -22,7 +22,7 @@ return {
 				},
 			},
 			defaults = {
-				file_ignore_patterns = { "node_modules", "git", "debug", "Debug" },
+				file_ignore_patterns = { "node_modules", "git", "debug", "Debug", "venv" },
 			},
 			extensions = {
 				fzf = {
