@@ -1,14 +1,10 @@
 return {
 	"numToStr/Comment.nvim",
 	event = "VeryLazy",
-	dependencies = {
-		"JoosepAlviste/nvim-ts-context-commentstring",
-	},
 	config = function()
-		local ts_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
 
 		require("Comment").setup({
-			pre_hook = function(ctx)
+			pre_hook = function()
 				local ft = vim.bo.filetype
 
 				local no_comment = {
@@ -22,7 +18,6 @@ return {
 					return ""
 				end
 
-				return ts_hook(ctx)
 			end,
 		})
 	end,
