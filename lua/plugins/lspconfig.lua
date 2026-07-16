@@ -88,8 +88,22 @@ return {
 		})
 
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
-		local servers = require("utils").servers
+		
+		-- Setup SourceKit using the new Neovim 0.11 native API
+		vim.lsp.config("sourcekit", {
+			capabilities = capabilities,
+			cmd = { "xcrun", "sourcekit-lsp" },
+			filetypes = { "swift", "objective-c", "objective-cpp" },
+			-- In 0.11, `root_dir` functions are replaced by simple `root_markers` tables
+			root_markers = {
+				"buildServer.json",
+				"Package.swift",
+				".git"
+			},
+		})
+		vim.lsp.enable("sourcekit")
 
+		local servers = require("utils").servers
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
 			"stylua",
@@ -103,7 +117,10 @@ return {
 				function(server_name)
 					local server = servers[server_name] or {}
 					server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-					require("lspconfig")[server_name].setup(server)
+					
+					-- Use the new Neovim 0.11 native API for Mason servers as well
+					vim.lsp.config(server_name, server)
+					vim.lsp.enable(server_name)
 				end,
 			},
 		})
