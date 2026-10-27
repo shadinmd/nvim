@@ -1,19 +1,27 @@
 return {
-	-- Swift syntax highlighting
-	{
-		"keith/swift.vim",
-		ft = "swift",
-	},
+  "wojciech-m/xcodebuild.nvim",
+  dependencies = {
+    "nvim-telescope/telescope.nvim",
+    "MunifTanjim/nui.nvim",
+  },
+  config = function()
+    require("xcodebuild").setup({
+      show_build_progress_bar = true,
+      logs = {
+        auto_open_on_success_tests = false,
+        auto_open_on_failed_tests = false,
+        auto_open_on_success_build = false,
+        auto_open_on_failed_build = true,
+        auto_focus = false,
+        auto_close_on_app_launch = true,
+      },
+    })
 
-	-- Enhanced Swift support
-	{
-		"wojciech-kulik/xcodebuild.nvim",
-		dependencies = {
-			"nvim-telescope/telescope.nvim",
-			"MunifTanjim/nui.nvim",
-		},
-		config = function()
-			require("xcodebuild").setup()
-		end,
-	},
+    -- Essential Keymaps
+    vim.keymap.set("n", "<leader>xl", "<cmd>XcodebuildToggleLogs<cr>", { desc = "Toggle Xcodebuild Logs" })
+    vim.keymap.set("n", "<leader>xb", "<cmd>XcodebuildBuild<cr>", { desc = "Build Project" })
+    vim.keymap.set("n", "<leader>xr", "<cmd>XcodebuildBuildRun<cr>", { desc = "Build & Run Project" })
+    vim.keymap.set("n", "<leader>xt", "<cmd>XcodebuildTest<cr>", { desc = "Run Tests" })
+    vim.keymap.set("n", "<leader>xd", "<cmd>XcodebuildSelectDevice<cr>", { desc = "Select Device" })
+  end,
 }
